@@ -29,6 +29,7 @@ const LoanApp = React.forwardRef((props, ref) => {
 	const multiplePrograms = faq.multiPrograms;
 	const onlinePrograms = faq.onlinePrograms;
 	const schoolHQState = faq.schoolHQState;
+	const [ queryParams, setQueryParams ] = useState(false);
 
 	const handleChange = (e) => {
 		setEmail(e.target.value);
@@ -121,16 +122,19 @@ const LoanApp = React.forwardRef((props, ref) => {
 		() => {
 			switch (props.location) {
 				case '?programname=engflex':
+					setQueryParams(true);
 					setActiveIndex(0);
 					break;
 				case '?programname=engimm':
+					setQueryParams(true);
 					setActiveIndex(1);
 					break;
 				case '?programname=engnw':
+					setQueryParams(true);
 					setActiveIndex(2);
 					break;
 				default:
-					setActiveIndex(0);
+					setQueryParams(false);
 			}
 		},
 		[ props.location ]
@@ -244,6 +248,11 @@ const LoanApp = React.forwardRef((props, ref) => {
 				</div>
 				{/* update form fields as necessary */}
 				<form className={formName} onSubmit={handleSubmit}>
+					{queryParams && (
+						<p>
+							Apply for Thinkful's <strong>{programName}</strong> financing
+						</p>
+					)}
 					<label htmlFor="email">Email address</label>
 					<input
 						className="border-2 rounded border-black text-center py-2 mb-4 w-64"
@@ -254,16 +263,12 @@ const LoanApp = React.forwardRef((props, ref) => {
 						value={email}
 						required
 					/>
-					{props.location && (
-						<p className="mb-0">
-							Apply for Thinkful's <strong>{programName}</strong> financing
-						</p>
-					)}
-					{!props.location &&
+
+					{!queryParams &&
 					multiplePrograms &&
 					!moreThanSixPrograms && (
 						<div className="w-full lg:w-64 px-8 lg:px-0">
-							<p className="text-center text-sm">Select your {props.schoolName} program</p>
+							<p className="text-center text-sm mb-0">Select your {props.schoolName} program</p>
 							{programLoanInfo.map((program, i) => {
 								return (
 									<p
@@ -277,11 +282,11 @@ const LoanApp = React.forwardRef((props, ref) => {
 							})}
 						</div>
 					)}
-					{!props.location &&
+					{!queryParams &&
 					multiplePrograms &&
 					moreThanSixPrograms && (
 						<div className="w-full lg:w-64 px-8 lg:px-0">
-							<p className="text-center text-sm">Select your {props.schoolName} program</p>
+							<p className="text-center text-sm mb-0">Select your {props.schoolName} program</p>
 							<select
 								id="programSelect"
 								className="border-2 border-primary mb-5 bg-white text-center w-full loanCalculator__selectInput"
@@ -297,7 +302,28 @@ const LoanApp = React.forwardRef((props, ref) => {
 							</select>
 						</div>
 					)}
-					<div className="hidden" id="hide">
+					{submitted ? (
+						<span className="pt-4 text-center">
+							Thanks for applying! Your loan application has opened in a new window. If the application
+							does not open and pop-up blockers have been disabled, please contact{' '}
+							<a href="mailto:tech@skills.fund" className="text-primary">
+								Tech@Skills.Fund
+							</a>.
+						</span>
+					) : (
+						<input
+							className="opacityApply uppercase bg-primary p-3 mb-4 w-48 rounded-full shadow-lg text-white cursor-pointer"
+							value="APPLY NOW"
+							id="loanAppSubmitBtn"
+							type="submit"
+						/>
+					)}
+					{!submitted && (
+						<p className="mt-3 text-xs italic">
+							Please note: clicking Apply Now will open your loan application in a new tab
+						</p>
+					)}
+					<div className="hidden h-0" id="hide">
 						<input
 							className="text-xs m-0 text-transparent"
 							type="text"
@@ -334,27 +360,6 @@ const LoanApp = React.forwardRef((props, ref) => {
 							readOnly
 						/>
 					</div>
-					{submitted ? (
-						<span className="pt-4 text-center">
-							Thanks for applying! Your loan application has opened in a new window. If the application
-							does not open and pop-up blockers have been disabled, please contact{' '}
-							<a href="mailto:tech@skills.fund" className="text-primary">
-								Tech@Skills.Fund
-							</a>.
-						</span>
-					) : (
-						<input
-							className="opacityApply uppercase bg-primary p-3 my-4 w-48 rounded-full shadow-lg text-white cursor-pointer"
-							value="APPLY NOW"
-							id="loanAppSubmitBtn"
-							type="submit"
-						/>
-					)}
-					{!submitted && (
-						<p className="mt-3 text-xs italic">
-							Please note: clicking Apply Now will open your loan application in a new tab
-						</p>
-					)}
 				</form>
 			</div>
 			{/* {onlinePrograms && 
