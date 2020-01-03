@@ -298,16 +298,41 @@ const LoanApp = React.forwardRef((props, ref) => {
 						</div>
 					)}
 					<div className="hidden" id="hide">
-						<input type="text" name="Stakeholder Type" value="Student" readOnly />
-						<input type="text" name="Program Name" value={programLoanInfo.programName} readOnly />
-						<input type="text" name="School" value={props.schoolName} readOnly />
 						<input
+							className="text-xs m-0 text-transparent"
+							type="text"
+							name="Stakeholder Type"
+							value="Student"
+							readOnly
+						/>
+						<input
+							className="text-xs m-0 text-transparent"
+							type="text"
+							name="Program Name"
+							value={programLoanInfo.programName}
+							readOnly
+						/>
+						<input
+							className="text-xs m-0 text-transparent"
+							type="text"
+							name="School"
+							value={props.schoolName}
+							readOnly
+						/>
+						<input
+							className="text-xs m-0 text-transparent"
 							type="text"
 							name="Student Loan Application Status"
 							value="BLA Click Email Submitted"
 							readOnly
 						/>
-						<input type="text" name="Clicked Begin Loan Application BLA" value="BLA Click" readOnly />
+						<input
+							className="text-xs m-0 text-transparent"
+							type="text"
+							name="Clicked Begin Loan Application BLA"
+							value="BLA Click"
+							readOnly
+						/>
 					</div>
 					{submitted ? (
 						<span className="pt-4 text-center">
