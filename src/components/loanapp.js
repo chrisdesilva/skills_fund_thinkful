@@ -297,7 +297,7 @@ const LoanApp = React.forwardRef((props, ref) => {
 							</select>
 						</div>
 					)}
-					<div className="hidden">
+					<div className="hidden" id="hide">
 						<input type="text" name="Stakeholder Type" value="Student" readOnly />
 						<input type="text" name="Program Name" value={programLoanInfo.programName} readOnly />
 						<input type="text" name="School" value={props.schoolName} readOnly />
