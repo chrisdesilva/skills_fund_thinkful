@@ -227,7 +227,7 @@ const LoanApp = React.forwardRef((props, ref) => {
 				<form className={formName} onSubmit={handleSubmit}>
 					<label htmlFor="email">Email address</label>
 					<input
-						className="border-2 rounded border-primary text-center py-2 mb-4 w-64"
+						className="border-2 rounded border-black text-center py-2 mb-4 w-64"
 						type="email"
 						name="email"
 						placeholder="Enter your email address"
@@ -258,7 +258,7 @@ const LoanApp = React.forwardRef((props, ref) => {
 							<p className="text-center text-sm">Select your {props.schoolName} program</p>
 							<select
 								id="programSelect"
-								className="border-2 border-primary mb-5 bg-white text-primary text-center w-full"
+								className="border-2 border-primary mb-5 bg-white text-center w-full loanCalculator__selectInput"
 								onChange={toggleIsActiveDropdown}
 							>
 								{programLoanInfo.map((program, i) => {

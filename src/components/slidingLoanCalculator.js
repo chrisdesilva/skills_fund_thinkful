@@ -139,7 +139,7 @@ const SlidingLoanCalculator = props => {
                             <h2 className="text-gray-800 text-center">Simple. Transparent.</h2>
                             <p className="text-gray-800" id="leadText">Figuring out your monthly payments on a loan shouldn't require a math degree. Find out exactly what you'll pay at {schoolName} with a Skills Fund loan.</p>
                         </div>
-                        <div className="w-full md:w-1/2 lg:w-1/3"></div>
+                        <div className="w-full md:w-1/2 lg:w-1/3"><Image /></div>
                     </div>
                     
                     <div>
@@ -194,7 +194,7 @@ const SlidingLoanCalculator = props => {
                     <span className={loanType === "0" ? "show" : "hide"}><><p className="loanCalculator__paymentAmounts text-3xl text-primary font-bold mb-1 text-center">${interestPayment.payment36}</p><p className="loanCalculator__paymentLabel text-center text-xs">Monthly Payments in School</p></></span>
                     <div className={loanType === "0" ? "show" : "show move"}>
                         <p className="loanCalculator__paymentAmounts text-3xl text-primary font-bold mb-1 text-center">${monthlyPayment.payment36}</p><p className="loanCalculator__paymentLabel text-center text-xs">Monthly Payments{loanType === "0" ? " After Graduation" : null}</p>
-                        <p className="loanCalculator__paymentAmounts text-3xl text-primary font-bold mb-1 text-center">{formatterWithCents.format(totalPayment.payment36)}</p><p className="loanCalculator__paymentLabel text-center text-xs">Total Cost</p>
+                        {/* <p className="loanCalculator__paymentAmounts text-3xl text-primary font-bold mb-1 text-center">{formatterWithCents.format(totalPayment.payment36)}</p><p className="loanCalculator__paymentLabel text-center text-xs">Total Cost</p> */}
                     </div>
                 </div>
                 
@@ -206,7 +206,7 @@ const SlidingLoanCalculator = props => {
                         <span className={loanType === "0" ? "show" : "hide"}><><p className="loanCalculator__paymentAmounts text-3xl text-primary font-bold mb-1 text-center">${interestPayment.payment60}</p><p className="loanCalculator__paymentLabel text-center text-xs">Monthly Payments in School</p></></span>
                         <div className={loanType === "0" ? "show" : "show move"}>
                             <p className="loanCalculator__paymentAmounts text-3xl text-primary font-bold mb-1 text-center">${monthlyPayment.payment60}</p><p className="loanCalculator__paymentLabel text-center text-xs">Monthly Payments{loanType === "0" ? " After Graduation" : null}</p>
-                            <p className="loanCalculator__paymentAmounts text-3xl text-primary font-bold mb-1 text-center">{formatterWithCents.format(totalPayment.payment60)}</p><p className="loanCalculator__paymentLabel text-center text-xs">Total Cost</p>
+                            {/* <p className="loanCalculator__paymentAmounts text-3xl text-primary font-bold mb-1 text-center">{formatterWithCents.format(totalPayment.payment60)}</p><p className="loanCalculator__paymentLabel text-center text-xs">Total Cost</p> */}
                         </div>
                     </div>
                     :
