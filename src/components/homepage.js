@@ -128,6 +128,7 @@ class Homepage extends React.Component {
 						IP={this.props.IP}
 						pageUri={this.props.pageUri}
 						schoolName={this.props.schoolName}
+						location={this.props.location}
 					/>
 				) : (
 					<DisabledApplication

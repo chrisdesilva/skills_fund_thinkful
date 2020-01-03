@@ -15,6 +15,7 @@ ReactGA.initialize(GATracking, {
 
 const IndexPage = () => {
 	const [ IP, setIP ] = useState('');
+	const location = window.location.search;
 
 	// Get IP address from client for Hubspot analytics
 	async function fetchIP() {
@@ -39,7 +40,13 @@ const IndexPage = () => {
 				<input type="text" name="otherDescription" />
 				<textarea name="comments" />
 			</form>
-			<Homepage formName={netlifyFormName} IP={IP} pageUri={schoolURL} schoolName={schoolName} />
+			<Homepage
+				location={location}
+				formName={netlifyFormName}
+				IP={IP}
+				pageUri={schoolURL}
+				schoolName={schoolName}
+			/>
 		</div>
 	);
 };

@@ -119,6 +119,25 @@ const LoanApp = React.forwardRef((props, ref) => {
 
 	useEffect(
 		() => {
+			switch (props.location) {
+				case '?programname=engflex':
+					setActiveIndex(0);
+					break;
+				case '?programname=engimm':
+					setActiveIndex(1);
+					break;
+				case '?programname=engnw':
+					setActiveIndex(2);
+					break;
+				default:
+					setActiveIndex(0);
+			}
+		},
+		[ props.location ]
+	);
+
+	useEffect(
+		() => {
 			setLoanUrl(programLoanInfo[activeIndex]['url']);
 			setProgramName(programLoanInfo[activeIndex]['name']);
 		},
@@ -235,7 +254,13 @@ const LoanApp = React.forwardRef((props, ref) => {
 						value={email}
 						required
 					/>
-					{multiplePrograms &&
+					{props.location && (
+						<p className="mb-0">
+							Apply for Thinkful's <strong>{programName}</strong> financing
+						</p>
+					)}
+					{!props.location &&
+					multiplePrograms &&
 					!moreThanSixPrograms && (
 						<div className="w-full lg:w-64 px-8 lg:px-0">
 							<p className="text-center text-sm">Select your {props.schoolName} program</p>
@@ -252,7 +277,8 @@ const LoanApp = React.forwardRef((props, ref) => {
 							})}
 						</div>
 					)}
-					{multiplePrograms &&
+					{!props.location &&
+					multiplePrograms &&
 					moreThanSixPrograms && (
 						<div className="w-full lg:w-64 px-8 lg:px-0">
 							<p className="text-center text-sm">Select your {props.schoolName} program</p>
