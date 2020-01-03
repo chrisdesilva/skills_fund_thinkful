@@ -15,7 +15,7 @@ ReactGA.initialize(GATracking, {
 
 const IndexPage = () => {
 	const [ IP, setIP ] = useState('');
-	const location = window.location.search;
+	const location = typeof window !== 'undefined' && window.location.search;
 
 	// Get IP address from client for Hubspot analytics
 	async function fetchIP() {
