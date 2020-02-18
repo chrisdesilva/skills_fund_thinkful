@@ -121,7 +121,7 @@ class Homepage extends React.Component {
 				{/* <LeadContent schoolName={this.props.schoolName} />
 				<ThreeSteps onClick={this.scrollToApply2} ref={this.threesteps} schoolName={this.props.schoolName} />
 				<LoanCalculator /> */}
-				<SlidingLoanCalculator />
+				<SlidingLoanCalculator location={this.props.location} />
 				{applicationsLive ? (
 					<LoanApp
 						ref={this.apply}

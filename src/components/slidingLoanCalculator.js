@@ -14,7 +14,7 @@ const SlidingLoanCalculator = props => {
     
     const [metroIndex, setMetroIndex] = useState(0)
     const [programIndex, setProgramIndex] = useState(0)
-    const [loanValue, setLoanValue] = useState(defaultLoanAmount)
+    const [loanValue, setLoanValue] = useState(programLoanInfo[programIndex]['loanInfo']['maxLoanAmt'])
     const [programMax, setProgramMax] = useState(programLoanInfo[0]['loanInfo']['maxLoanAmt'])
     const [monthlyPayment, setMonthlyPayment] = useState({ payment36: null, payment60: null })
     const [totalPayment, setTotalPayment] = useState({ payment36: null, payment60: null })
@@ -26,6 +26,7 @@ const SlidingLoanCalculator = props => {
     const [metros, setMetros] = useState(programLoanInfo[0]['metros'])
     const [multiMetros, hasMultiMetros] = useState(programLoanInfo[0]['showMetros'])
     const [loanInformation, setLoanInformation] = useState(programLoanInfo[0].loanInfo)
+    const [ queryParams, setQueryParams ] = useState(false);
 
     const formatter = new Intl.NumberFormat('en-US', { 
         style: 'currency',
@@ -88,6 +89,69 @@ const SlidingLoanCalculator = props => {
         setMetroIndex(Number(e.target.value))
     }
 
+    useEffect(
+		() => {
+			switch (props.location) {
+				case '?program=da':
+					setQueryParams(true);
+					setProgramIndex(0);
+					break;
+				case '?program=daimm':
+					setQueryParams(true);
+					setProgramIndex(1);
+					break;
+				case '?program=danw':
+					setQueryParams(true);
+					setProgramIndex(2);
+					break;
+				case '?program=ds':
+					setQueryParams(true);
+					setProgramIndex(3);
+					break;
+				case '?program=dsimm':
+					setQueryParams(true);
+					setProgramIndex(4);
+					break;
+				case '?program=dsnw':
+					setQueryParams(true);
+					setProgramIndex(5);
+					break;
+				case '?program=dm':
+					setQueryParams(true);
+					setProgramIndex(6);
+					break;
+				case '?program=eng':
+					setQueryParams(true);
+					setProgramIndex(7);
+					break;
+				case '?program=engimm':
+					setQueryParams(true);
+					setProgramIndex(8);
+					break;
+				case '?program=engnw':
+					setQueryParams(true);
+					setProgramIndex(9);
+					break;
+				case '?program=pm':
+					setQueryParams(true);
+					setProgramIndex(10);
+					break;
+				case '?program=uxui':
+					setQueryParams(true);
+					setProgramIndex(11);
+					break;
+				case '?program=uxuiimm':
+					setQueryParams(true);
+					setProgramIndex(12);
+					break;
+				default:
+					setQueryParams(false);
+            }
+            console.log(programIndex, " Calculator ", props.location )
+		},
+		[ ]
+	);
+
     useEffect(() => {
         calculateMonthlyPayment() // run calculator when page loads to show initial amounts
         setLoanType(programLoanInfo[programIndex]['defaultLoanType'])
@@ -102,13 +166,7 @@ const SlidingLoanCalculator = props => {
             setProgramMax(programLoanInfo[programIndex]['loanInfo']['maxLoanAmt'])
         }
 
-        // if the program selected has a maximum loan amount smaller than the default loan amount, set the initial value of the slider to the program's max
-        if(defaultLoanAmount > programLoanInfo[programIndex]['loanInfo']['maxLoanAmt']) {
-            setLoanValue(programLoanInfo[programIndex]['loanInfo']['maxLoanAmt'])
-        } else {
-            setLoanValue(defaultLoanAmount)
-        }
-        // hook is triggered when the values in the array below are updated
+        setLoanValue(programLoanInfo[programIndex]['loanInfo']['maxLoanAmt'])
     }, [metroIndex, programIndex, programMax])
 
     useEffect(() => {
@@ -124,10 +182,6 @@ const SlidingLoanCalculator = props => {
             setNonPaymentPeriod(programLoanInfo[programIndex]['loanInfo']['0']['k'])
         }
     }, [loanType])
-
-    useEffect(() => { // watches for changes to metroIndex, updates dropdown/loan info accordingly 
-        setLoanInformation(programLoanInfo[programIndex]['metros'][metroIndex]['loanInfo'])
-    }, [metroIndex])
 
     return (
         <div className={props.modal ? "loanCalculator opacity" : "loanCalculator"}>
@@ -147,7 +201,7 @@ const SlidingLoanCalculator = props => {
                             <>
                             <label className="text-sm" htmlFor="program">Select your program</label>
                             <div className="loanCalculator__selectInput">    
-                                <select id="program" defaultValue={'default'} onChange={handleProgramName}>
+                                <select id="program" value={programIndex} onChange={handleProgramName}>
                                     {programLoanInfo.map((program, i) => <option label={program.name} value={i} key={program.name}>{program.name}</option>)}
                                 </select>
                             </div>
@@ -181,7 +235,7 @@ const SlidingLoanCalculator = props => {
                     <input aria-label="loan-calculator-slider" className="loanCalculator__input w-full lg:w-1/2 mb-2" onChange={handleSliderAmt} onTouchEnd={calculateMonthlyPayment} onMouseUp={calculateMonthlyPayment} type="range" min="2000" step="5" max={programMax} value={loanValue}/>
                     <div className="loanCalculator__labels flex justify-between w-full lg:w-1/2">
                         <p>Min<br/>$2,000</p>
-                        <p className="text-center">Loan Amount<br/><span className="loanCalculator__amount">{formatter.format(loanValue)}</span></p>
+                        <p className="text-center mb-4">Loan Amount<br/><span className="loanCalculator__amount text-2xl font-bold">{formatter.format(loanValue)}</span></p>
                         <p className="text-right">Max<br/>{formatter.format(programMax)}</p>
                     </div>
                     {/* <span className="loanCalculator__disclaimers" onClick={props.toggleModal}>Disclaimers</span> */}

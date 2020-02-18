@@ -27,123 +27,80 @@ const LoanApp = React.forwardRef((props, ref) => {
 	const formName = `${props.schoolName}_apply_now program-apply flex flex-col items-center`;
 	const costOfLiving = faq.costOfLiving;
 	const multiplePrograms = faq.multiPrograms;
-	const onlinePrograms = faq.onlinePrograms;
-	const schoolHQState = faq.schoolHQState;
 	const [ queryParams, setQueryParams ] = useState(false);
 
 	const handleChange = (e) => {
 		setEmail(e.target.value);
 	};
 
-	const toggleIsActive = (i) => {
-		setLoanUrl(programLoanInfo[i]['url']);
-		setProgramName(programLoanInfo[i]['name']);
-		setActiveIndex(i);
-		switch (activeIndex) { // accounts for up to 10 programs
-			case 0:
-				setActive({
-					0: !active,
-					1: false,
-					2: false,
-					3: false,
-					4: false,
-					5: false
-				});
+	const toggleIsActiveDropdown = (e) => {
+		setActiveIndex(Number(e.target.value));
+	};
+
+	useEffect(() => {
+		switch (props.location) {
+			case '?program=da':
+				setQueryParams(true);
+				setActiveIndex(0);
 				break;
-			case 1:
-				setActive({
-					0: false,
-					1: !active,
-					2: false,
-					3: false,
-					4: false,
-					5: false
-				});
+			case '?program=daimm':
+				setQueryParams(true);
+				setActiveIndex(1);
 				break;
-			case 2:
-				setActive({
-					0: false,
-					1: false,
-					2: !active,
-					3: false,
-					4: false,
-					5: false
-				});
+			case '?program=danw':
+				setQueryParams(true);
+				setActiveIndex(2);
 				break;
-			case 3:
-				setActive({
-					0: false,
-					1: false,
-					2: false,
-					3: !active,
-					4: false,
-					5: false
-				});
+			case '?program=ds':
+				setQueryParams(true);
+				setActiveIndex(3);
 				break;
-			case 4:
-				setActive({
-					0: false,
-					1: false,
-					2: false,
-					3: false,
-					4: !active,
-					5: false
-				});
+			case '?program=dsimm':
+				setQueryParams(true);
+				setActiveIndex(4);
 				break;
-			case 5:
-				setActive({
-					0: false,
-					1: false,
-					2: false,
-					3: false,
-					4: false,
-					5: !active
-				});
+			case '?program=dsnw':
+				setQueryParams(true);
+				setActiveIndex(5);
+				break;
+			case '?program=dm':
+				setQueryParams(true);
+				setActiveIndex(6);
+				break;
+			case '?program=eng':
+				setQueryParams(true);
+				setActiveIndex(7);
+				break;
+			case '?program=engimm':
+				setQueryParams(true);
+				setActiveIndex(8);
+				break;
+			case '?program=engnw':
+				setQueryParams(true);
+				setActiveIndex(9);
+				break;
+			case '?program=pm':
+				setQueryParams(true);
+				setActiveIndex(10);
+				break;
+			case '?program=uxui':
+				setQueryParams(true);
+				setActiveIndex(11);
+				break;
+			case '?program=uxuiimm':
+				setQueryParams(true);
+				setActiveIndex(12);
 				break;
 			default:
-				setActive({
-					0: !active,
-					1: false,
-					2: false,
-					3: false,
-					4: false,
-					5: false
-				});
-				break;
+				setQueryParams(false);
 		}
-	};
-
-	const toggleIsActiveDropdown = (e) => {
-		let program = e.target.value;
-		setActiveIndex(program);
-	};
-
-	useEffect(
-		() => {
-			switch (props.location) {
-				case '?programname=engflex':
-					setQueryParams(true);
-					setActiveIndex(0);
-					break;
-				case '?programname=engimm':
-					setQueryParams(true);
-					setActiveIndex(1);
-					break;
-				case '?programname=engnw':
-					setQueryParams(true);
-					setActiveIndex(2);
-					break;
-				default:
-					setQueryParams(false);
-			}
-		},
-		[ props.location ]
-	);
+		setLoanUrl(programLoanInfo[activeIndex]['url']);
+		setProgramName(programLoanInfo[activeIndex]['name']);
+	}, []);
 
 	useEffect(
 		() => {
 			setLoanUrl(programLoanInfo[activeIndex]['url']);
-			setProgramName(programLoanInfo[activeIndex]['name']);
 		},
 		[ activeIndex ]
 	);
@@ -248,60 +205,34 @@ const LoanApp = React.forwardRef((props, ref) => {
 				</div>
 				{/* update form fields as necessary */}
 				<form className={formName} onSubmit={handleSubmit}>
-					{queryParams && (
-						<p>
-							Apply for Thinkful's <strong>{programName}</strong> financing
-						</p>
-					)}
-					<label htmlFor="email">Email address</label>
-					<input
-						className="border-2 rounded border-black text-center py-2 mb-4 w-64"
-						type="email"
-						name="email"
-						placeholder="Enter your email address"
-						onChange={handleChange}
-						value={email}
-						required
-					/>
-
-					{!queryParams &&
-					multiplePrograms &&
-					!moreThanSixPrograms && (
-						<div className="w-full lg:w-64 px-8 lg:px-0">
-							<p className="text-center text-sm mb-0">Select your {props.schoolName} program</p>
+					<div className="w-full lg:w-64 px-8 lg:px-0">
+						<label htmlFor="email">Email address</label>
+						<input
+							className="border-2 rounded border-black text-center py-2 mb-4 w-64"
+							type="email"
+							name="email"
+							placeholder="Enter your email address"
+							onChange={handleChange}
+							value={email}
+							required
+						/>
+						<p className="text-center text-sm mb-0">Select your {props.schoolName} program</p>
+						<select
+							id="programSelect"
+							className="border-2 border-primary mb-5 bg-white text-center w-full loanCalculator__selectInput"
+							onChange={toggleIsActiveDropdown}
+							value={activeIndex}
+						>
 							{programLoanInfo.map((program, i) => {
 								return (
-									<p
-										key={program.name}
-										className={activeIndex === i ? activeClass : inactiveClass}
-										onClick={() => toggleIsActive(i)}
-									>
+									<option key={program.name} value={i}>
 										{program.name}
-									</p>
+									</option>
 								);
 							})}
-						</div>
-					)}
-					{!queryParams &&
-					multiplePrograms &&
-					moreThanSixPrograms && (
-						<div className="w-full lg:w-64 px-8 lg:px-0">
-							<p className="text-center text-sm mb-0">Select your {props.schoolName} program</p>
-							<select
-								id="programSelect"
-								className="border-2 border-primary mb-5 bg-white text-center w-full loanCalculator__selectInput"
-								onChange={toggleIsActiveDropdown}
-							>
-								{programLoanInfo.map((program, i) => {
-									return (
-										<option key={program.name} value={i}>
-											{program.name}
-										</option>
-									);
-								})}
-							</select>
-						</div>
-					)}
+						</select>
+					</div>
+					{/* )} */}
 					{submitted ? (
 						<span className="pt-4 text-center">
 							Thanks for applying! Your loan application has opened in a new window. If the application
@@ -362,13 +293,7 @@ const LoanApp = React.forwardRef((props, ref) => {
 					</div>
 				</form>
 			</div>
-			{/* {onlinePrograms && 
-                    <p className="m-0 text-base pt-8 px-4">
-                        <strong className="m-0">ATTENTION ONLINE STUDENTS: </strong>When entering "Applicant Information" within your loan application, <strong className="m-0">please select {schoolHQState} as "the state of the school you plan to attend."</strong>
-                    </p>
-                } */}
 			<div className="px-8 text-sm">
-				{/* <p className="text-center pt-8 text-white">If you are a cosigner, begin the addendum now by clicking <a className="underline" href="https://sf.privateloan.studentloan.org/Cosigner.do?execution=e1s1" rel="noreferrer noopener" target="_blank">here</a>.</p> */}
 				<p
 					className="text-center text-white underline cursor-pointer font-bold my-4"
 					onClick={() => toggleDisclaimers(!disclaimers)}

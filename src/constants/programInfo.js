@@ -147,11 +147,222 @@ export const moreThanSixPrograms = true; // set to true if there are 7 or more p
 export const programLoanInfo = [
 	// update with program names and corresponding loan URLs with market segment code from Master Loan Parameters
 	{
-		name: 'Engineering Flex',
-		url: 'https://my.skills.fund/application?lenderCode=SFTF',
+		name: 'Data Analytics',
+		url: 'https://my.skills.fund/application?lenderCode=SKTHDAT19',
 		loanInfo: {
 			// match loanInfo in first metro below
-			maxLoanAmt: 10000,
+			maxLoanAmt: 8970,
+			loanTerm36: true,
+			loanTerm60: false,
+			'0': {
+				// interest-only
+				k: 10,
+				apr36: 11.16
+			},
+			'1': {
+				apr36: 11.69
+			}
+		},
+		defaultLoanType: '0', // leave at 0 for interest-only, set to 1 for immediate repayment
+		showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+		showLoanTypes: true, // true if both IR and IO are available
+		locations: [ 'Metro 1', 'Metro 2', 'Metro 3' ],
+		metros: [
+			// list in same order as locations array above
+			{
+				location: 'Metro 1',
+				loanInfo: {
+					// // match loanInfo to Program 1 above
+					maxLoanAmt: 8970,
+					loanTerm36: true,
+					loanTerm60: false,
+					'0': {
+						k: 10,
+						apr36: 11.16
+					},
+					'1': {
+						apr36: 11.69
+					}
+				}
+			},
+			{
+				location: 'Metro 2',
+				loanInfo: {
+					maxLoanAmt: 15545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			},
+			{
+				location: 'Metro 3',
+				loanInfo: {
+					maxLoanAmt: 20545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			}
+		]
+	},
+	{
+		name: 'Data Analytics Immersion',
+		url: 'https://my.skills.fund/application?lenderCode=SKTHDATIM19', // $13,500 max tuition, no COL alert
+		loanInfo: {
+			// match loanInfo in first metro below
+			maxLoanAmt: 13600,
+			loanTerm36: true,
+			loanTerm60: false,
+			'0': {
+				// interest-only
+				k: 6,
+				apr36: 11.08,
+				apr60: 12.51
+			},
+			'1': {
+				apr36: 11.69
+			}
+		},
+		defaultLoanType: '0', // leave at 0 for interest-only, set to 1 for immediate repayment
+		showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+		showLoanTypes: true, // true if both IR and IO are available
+		locations: [ 'Metro 1', 'Metro 2', 'Metro 3' ],
+		metros: [
+			// list in same order as locations array above
+			{
+				location: 'Metro 1',
+				loanInfo: {
+					// // match loanInfo to Program 1 above
+					maxLoanAmt: 13600,
+					loanTerm36: true,
+					loanTerm60: false,
+					'0': {
+						k: 6,
+						apr36: 11.08,
+						apr60: 12.51
+					},
+					'1': {
+						apr36: 11.69
+					}
+				}
+			},
+			{
+				location: 'Metro 2',
+				loanInfo: {
+					maxLoanAmt: 15545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			},
+			{
+				location: 'Metro 3',
+				loanInfo: {
+					maxLoanAmt: 20545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			}
+		]
+	},
+	{
+		name: 'Data Analytics Nights & Weekends',
+		url: 'https://my.skills.fund/application?lenderCode=SKTHDANW19',
+		loanInfo: {
+			// match loanInfo in first metro below
+			maxLoanAmt: 12600,
+			loanTerm36: true,
+			loanTerm60: false,
+			'0': {
+				// interest-only
+				k: 9,
+				apr36: 10.87,
+				apr60: 12.51
+			},
+			'1': {
+				apr36: 11.69
+			}
+		},
+		defaultLoanType: '0', // leave at 0 for interest-only, set to 1 for immediate repayment
+		showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+		showLoanTypes: true, // true if both IR and IO are available
+		locations: [ 'Metro 1', 'Metro 2', 'Metro 3' ],
+		metros: [
+			// list in same order as locations array above
+			{
+				location: 'Metro 1',
+				loanInfo: {
+					// // match loanInfo to Program 1 above
+					maxLoanAmt: 12600,
+					loanTerm36: true,
+					loanTerm60: false,
+					'0': {
+						k: 9,
+						apr36: 10.87,
+						apr60: 12.51
+					},
+					'1': {
+						apr36: 11.69
+					}
+				}
+			},
+			{
+				location: 'Metro 2',
+				loanInfo: {
+					maxLoanAmt: 15545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			},
+			{
+				location: 'Metro 3',
+				loanInfo: {
+					maxLoanAmt: 20545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			}
+		]
+	},
+	{
+		name: 'Data Science Flex',
+		url: 'https://my.skills.fund/application?lenderCode=SFTDDS',
+		loanInfo: {
+			// match loanInfo in first metro below
+			maxLoanAmt: 8970,
 			loanTerm36: true,
 			loanTerm60: false,
 			'0': {
@@ -174,12 +385,296 @@ export const programLoanInfo = [
 				location: 'Metro 1',
 				loanInfo: {
 					// // match loanInfo to Program 1 above
-					maxLoanAmt: 10000,
+					maxLoanAmt: 8970,
 					loanTerm36: true,
 					loanTerm60: false,
 					'0': {
 						k: 8,
 						apr36: 11.08,
+						apr60: 12.51
+					},
+					'1': {
+						apr36: 11.69
+					}
+				}
+			},
+			{
+				location: 'Metro 2',
+				loanInfo: {
+					maxLoanAmt: 15545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 8,
+						apr36: 10.94,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			},
+			{
+				location: 'Metro 3',
+				loanInfo: {
+					maxLoanAmt: 20545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			}
+		]
+	},
+	{
+		name: 'Data Science Immersion',
+		url: 'https://my.skills.fund/application?lenderCode=SKTHKIMM19',
+		loanInfo: {
+			// match loanInfo in first metro below
+			maxLoanAmt: 20000,
+			loanTerm36: true,
+			loanTerm60: false,
+			'0': {
+				// interest-only
+				k: 7,
+				apr36: 11.01,
+				apr60: 12.51
+			},
+			'1': {
+				apr36: 11.69
+			}
+		},
+		defaultLoanType: '0', // leave at 0 for interest-only, set to 1 for immediate repayment
+		showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+		showLoanTypes: true, // true if both IR and IO are available
+		locations: [ 'Metro 1', 'Metro 2', 'Metro 3' ],
+		metros: [
+			// list in same order as locations array above
+			{
+				location: 'Metro 1',
+				loanInfo: {
+					// // match loanInfo to Program 1 above
+					maxLoanAmt: 20000,
+					loanTerm36: true,
+					loanTerm60: false,
+					'0': {
+						k: 7,
+						apr36: 11.01,
+						apr60: 12.51
+					},
+					'1': {
+						apr36: 11.69
+					}
+				}
+			},
+			{
+				location: 'Metro 2',
+				loanInfo: {
+					maxLoanAmt: 15545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			},
+			{
+				location: 'Metro 3',
+				loanInfo: {
+					maxLoanAmt: 20545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			}
+		]
+	},
+	{
+		name: 'Data Science Nights & Weekends',
+		url: 'https://my.skills.fund/application?lenderCode=SKTHDSNW19',
+		loanInfo: {
+			// match loanInfo in first metro below
+			maxLoanAmt: 12600,
+			loanTerm36: true,
+			loanTerm60: false,
+			'0': {
+				// interest-only
+				k: 9,
+				apr36: 10.87,
+				apr60: 12.51
+			},
+			'1': {
+				apr36: 11.69
+			}
+		},
+		defaultLoanType: '0', // leave at 0 for interest-only, set to 1 for immediate repayment
+		showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+		showLoanTypes: true, // true if both IR and IO are available
+		locations: [ 'Metro 1', 'Metro 2', 'Metro 3' ],
+		metros: [
+			// list in same order as locations array above
+			{
+				location: 'Metro 1',
+				loanInfo: {
+					// // match loanInfo to Program 1 above
+					maxLoanAmt: 12600,
+					loanTerm36: true,
+					loanTerm60: false,
+					'0': {
+						k: 9,
+						apr36: 10.87,
+						apr60: 12.51
+					},
+					'1': {
+						apr36: 11.69
+					}
+				}
+			},
+			{
+				location: 'Metro 2',
+				loanInfo: {
+					maxLoanAmt: 15545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			},
+			{
+				location: 'Metro 3',
+				loanInfo: {
+					maxLoanAmt: 20545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			}
+		]
+	},
+	{
+		name: 'Digital Marketing Flex',
+		url: 'https://my.skills.fund/application?lenderCode=SKTHDMFPT19',
+		loanInfo: {
+			// match loanInfo in first metro below
+			maxLoanAmt: 5500,
+			loanTerm36: true,
+			loanTerm60: false,
+			'0': {
+				// interest-only
+				k: 5,
+				apr36: 11.16,
+				apr60: 12.51
+			},
+			'1': {
+				apr36: 11.69
+			}
+		},
+		defaultLoanType: '0', // leave at 0 for interest-only, set to 1 for immediate repayment
+		showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+		showLoanTypes: true, // true if both IR and IO are available
+		locations: [ 'Metro 1', 'Metro 2', 'Metro 3' ],
+		metros: [
+			// list in same order as locations array above
+			{
+				location: 'Metro 1',
+				loanInfo: {
+					// // match loanInfo to Program 1 above
+					maxLoanAmt: 5500,
+					loanTerm36: true,
+					loanTerm60: false,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': {
+						apr36: 11.69
+					}
+				}
+			},
+			{
+				location: 'Metro 2',
+				loanInfo: {
+					maxLoanAmt: 15545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			},
+			{
+				location: 'Metro 3',
+				loanInfo: {
+					maxLoanAmt: 20545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			}
+		]
+	},
+	{
+		name: 'Engineering Flex',
+		url: 'https://my.skills.fund/application?lenderCode=SFTF',
+		loanInfo: {
+			// match loanInfo in first metro below
+			maxLoanAmt: 13100,
+			loanTerm36: true,
+			loanTerm60: false,
+			'0': {
+				// interest-only
+				k: 8,
+				apr36: 10.94,
+				apr60: 12.51
+			},
+			'1': {
+				apr36: 11.69
+			}
+		},
+		defaultLoanType: '0', // leave at 0 for interest-only, set to 1 for immediate repayment
+		showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+		showLoanTypes: true, // true if both IR and IO are available
+		locations: [ 'Metro 1', 'Metro 2', 'Metro 3' ],
+		metros: [
+			// list in same order as locations array above
+			{
+				location: 'Metro 1',
+				loanInfo: {
+					// // match loanInfo to Program 1 above
+					maxLoanAmt: 13100,
+					loanTerm36: true,
+					loanTerm60: false,
+					'0': {
+						k: 8,
+						apr36: 10.94,
 						apr60: 12.51
 					},
 					'1': {
@@ -226,15 +721,63 @@ export const programLoanInfo = [
 			loanTerm36: true,
 			loanTerm60: false,
 			'0': {
-				k: 7,
+				// interest-only
+				k: 6,
 				apr36: 11.08,
 				apr60: 12.51
 			},
-			'1': null
+			'1': null // immediate repayment
 		},
 		defaultLoanType: '0', // leave at 0 for interest-only, set to 1 for immediate repayment
-		showMetros: false,
-		showLoanTypes: false
+		showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+		showLoanTypes: false, // true if both IR and IO are available
+		locations: [ 'Metro 1', 'Metro 2', 'Metro 3' ],
+		metros: [
+			// list in same order as locations array above
+			{
+				location: 'Metro 1',
+				loanInfo: {
+					// // match loanInfo to Program 1 above
+					maxLoanAmt: 17600,
+					loanTerm36: true,
+					loanTerm60: false,
+					'0': {
+						k: 6,
+						apr36: 11.08,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			},
+			{
+				location: 'Metro 2',
+				loanInfo: {
+					maxLoanAmt: 15545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			},
+			{
+				location: 'Metro 3',
+				loanInfo: {
+					maxLoanAmt: 20545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			}
+		]
 	},
 	{
 		name: 'Engineering Nights & Weekends',
@@ -245,18 +788,280 @@ export const programLoanInfo = [
 			loanTerm36: true,
 			loanTerm60: false,
 			'0': {
+				// interest-only
 				k: 9,
 				apr36: 10.87,
 				apr60: 12.51
 			},
 			'1': {
-				apr36: 11.25,
-				apr60: 12.55
+				apr36: 11.69
 			}
 		},
 		defaultLoanType: '0', // leave at 0 for interest-only, set to 1 for immediate repayment
-		showMetros: false,
-		showLoanTypes: true
+		showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+		showLoanTypes: true, // true if both IR and IO are available
+		locations: [ 'Metro 1', 'Metro 2', 'Metro 3' ],
+		metros: [
+			// list in same order as locations array above
+			{
+				location: 'Metro 1',
+				loanInfo: {
+					// // match loanInfo to Program 1 above
+					maxLoanAmt: 13825,
+					loanTerm36: true,
+					loanTerm60: false,
+					'0': {
+						k: 9,
+						apr36: 10.87,
+						apr60: 12.51
+					},
+					'1': {
+						apr36: 11.69
+					}
+				}
+			},
+			{
+				location: 'Metro 2',
+				loanInfo: {
+					maxLoanAmt: 15545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			},
+			{
+				location: 'Metro 3',
+				loanInfo: {
+					maxLoanAmt: 20545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			}
+		]
+	},
+	{
+		name: 'Product Management Flex',
+		url: 'https://my.skills.fund/application?lenderCode=SKTHPMF19',
+		loanInfo: {
+			// match loanInfo in first metro below
+			maxLoanAmt: 9600,
+			loanTerm36: true,
+			loanTerm60: false,
+			'0': {
+				// interest-only
+				k: 7,
+				apr36: 11.16,
+				apr60: 12.51
+			},
+			'1': {
+				apr36: 11.69
+			}
+		},
+		defaultLoanType: '0', // leave at 0 for interest-only, set to 1 for immediate repayment
+		showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+		showLoanTypes: true, // true if both IR and IO are available
+		locations: [ 'Metro 1', 'Metro 2', 'Metro 3' ],
+		metros: [
+			// list in same order as locations array above
+			{
+				location: 'Metro 1',
+				loanInfo: {
+					// // match loanInfo to Program 1 above
+					maxLoanAmt: 9600,
+					loanTerm36: true,
+					loanTerm60: false,
+					'0': {
+						k: 7,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': {
+						apr36: 11.69
+					}
+				}
+			},
+			{
+				location: 'Metro 2',
+				loanInfo: {
+					maxLoanAmt: 15545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			},
+			{
+				location: 'Metro 3',
+				loanInfo: {
+					maxLoanAmt: 20545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			}
+		]
+	},
+	{
+		name: 'UX/UI Design Flex',
+		url: 'https://my.skills.fund/application?lenderCode=SKTHFPD19',
+		loanInfo: {
+			// match loanInfo in first metro below
+			maxLoanAmt: 9540,
+			loanTerm36: true,
+			loanTerm60: false,
+			'0': {
+				// interest-only
+				k: 10,
+				apr36: 11.08,
+				apr60: 12.51
+			},
+			'1': {
+				apr36: 11.69
+			}
+		},
+		defaultLoanType: '0', // leave at 0 for interest-only, set to 1 for immediate repayment
+		showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+		showLoanTypes: true, // true if both IR and IO are available
+		locations: [ 'Metro 1', 'Metro 2', 'Metro 3' ],
+		metros: [
+			// list in same order as locations array above
+			{
+				location: 'Metro 1',
+				loanInfo: {
+					// // match loanInfo to Program 1 above
+					maxLoanAmt: 9540,
+					loanTerm36: true,
+					loanTerm60: false,
+					'0': {
+						k: 10,
+						apr36: 11.08,
+						apr60: 12.51
+					},
+					'1': {
+						apr36: 11.69
+					}
+				}
+			},
+			{
+				location: 'Metro 2',
+				loanInfo: {
+					maxLoanAmt: 15545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			},
+			{
+				location: 'Metro 3',
+				loanInfo: {
+					maxLoanAmt: 20545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			}
+		]
+	},
+	{
+		name: 'UX/UI Design Immersion',
+		url: 'https://my.skills.fund/application?lenderCode=SKTHUXD19',
+		loanInfo: {
+			// match loanInfo in first metro below
+			maxLoanAmt: 16000,
+			loanTerm36: true,
+			loanTerm60: false,
+			'0': {
+				// interest-only
+				k: 7,
+				apr36: 11.08,
+				apr60: 12.51
+			},
+			'1': {
+				apr36: 11.69
+			}
+		},
+		defaultLoanType: '0', // leave at 0 for interest-only, set to 1 for immediate repayment
+		showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+		showLoanTypes: true, // true if both IR and IO are available
+		locations: [ 'Metro 1', 'Metro 2', 'Metro 3' ],
+		metros: [
+			// list in same order as locations array above
+			{
+				location: 'Metro 1',
+				loanInfo: {
+					// // match loanInfo to Program 1 above
+					maxLoanAmt: 16000,
+					loanTerm36: true,
+					loanTerm60: false,
+					'0': {
+						k: 7,
+						apr36: 11.08,
+						apr60: 12.51
+					},
+					'1': {
+						apr36: 11.69
+					}
+				}
+			},
+			{
+				location: 'Metro 2',
+				loanInfo: {
+					maxLoanAmt: 15545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			},
+			{
+				location: 'Metro 3',
+				loanInfo: {
+					maxLoanAmt: 20545,
+					loanTerm36: true,
+					loanTerm60: true,
+					'0': {
+						k: 5,
+						apr36: 11.16,
+						apr60: 12.51
+					},
+					'1': null
+				}
+			}
+		]
 	}
 ];
 
