@@ -125,10 +125,7 @@ const LoanApp = React.forwardRef((props, ref) => {
 	};
 
 	return (
-		<div
-			ref={ref}
-			className="flex flex-col items-center justify-center pt-8 mx-2 lg:mx-10 rounded shadow-xl bg-primary"
-		>
+		<div ref={ref} className="flex flex-col items-center justify-center pt-8 bg-primary">
 			<h2 className="text-white">Loan Application</h2>
 			<div className="rounded shadow-2xl pt-8 px-8 mx-4 bg-white">
 				{/* update with school name, remove cost of living if school does not offer it */}

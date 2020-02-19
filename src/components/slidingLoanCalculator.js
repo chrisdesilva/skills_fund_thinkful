@@ -130,7 +130,7 @@ const SlidingLoanCalculator = (props) => {
 
 	return (
 		<div className={props.modal ? 'loanCalculator opacity' : 'loanCalculator'}>
-			<div className="loanCalculator__content pt-8 bg-gray-100">
+			<div className="loanCalculator__content pt-8 bg-white">
 				<div className="loanCalculator__select flex flex-col items-center px-4">
 					<div className="flex flex-col md:flex-row md:justify-between mb-8">
 						<div className="flex flex-col md:w-1/2 justify-center px-4">
