@@ -5,7 +5,6 @@ import {
     defaultLoanAmount, 
     faq,
     interestRates,
-    paymentTable,
     programLoanInfo,
     schoolName
 } from '../constants/programInfo'
@@ -22,11 +21,10 @@ const SlidingLoanCalculator = props => {
     const [nonPaymentPeriod, setNonPaymentPeriod] = useState(programLoanInfo[0]['loanInfo']['0']['k'])
     const [loanType, setLoanType] = useState(programLoanInfo[0]['defaultLoanType'])
     const [showLoanTypes, setShowLoanTypes] = useState(programLoanInfo[0]['showLoanTypes'])
-    const [locations, setLocations] = useState(programLoanInfo[0]['locations'])
+	const queryParams = programLoanInfo.map((program) => program.queryParams);
     const [metros, setMetros] = useState(programLoanInfo[0]['metros'])
     const [multiMetros, hasMultiMetros] = useState(programLoanInfo[0]['showMetros'])
     const [loanInformation, setLoanInformation] = useState(programLoanInfo[0].loanInfo)
-    const [ queryParams, setQueryParams ] = useState(false);
 
     const formatter = new Intl.NumberFormat('en-US', { 
         style: 'currency',
@@ -91,65 +89,9 @@ const SlidingLoanCalculator = props => {
 
     useEffect(
 		() => {
-			switch (props.location) {
-				case '?program=da':
-					setQueryParams(true);
-					setProgramIndex(0);
-					break;
-				case '?program=daimm':
-					setQueryParams(true);
-					setProgramIndex(1);
-					break;
-				case '?program=danw':
-					setQueryParams(true);
-					setProgramIndex(2);
-					break;
-				case '?program=ds':
-					setQueryParams(true);
-					setProgramIndex(3);
-					break;
-				case '?program=dsimm':
-					setQueryParams(true);
-					setProgramIndex(4);
-					break;
-				case '?program=dsnw':
-					setQueryParams(true);
-					setProgramIndex(5);
-					break;
-				case '?program=dm':
-					setQueryParams(true);
-					setProgramIndex(6);
-					break;
-				case '?program=eng':
-					setQueryParams(true);
-					setProgramIndex(7);
-					break;
-				case '?program=engimm':
-					setQueryParams(true);
-					setProgramIndex(8);
-					break;
-				case '?program=engnw':
-					setQueryParams(true);
-					setProgramIndex(9);
-					break;
-				case '?program=pm':
-					setQueryParams(true);
-					setProgramIndex(10);
-					break;
-				case '?program=uxui':
-					setQueryParams(true);
-					setProgramIndex(11);
-					break;
-				case '?program=uxuiimm':
-					setQueryParams(true);
-					setProgramIndex(12);
-					break;
-				default:
-					setQueryParams(false);
-            }
-            console.log(programIndex, " Calculator ", props.location )
+            setProgramIndex(queryParams.indexOf(props.location)); // read query params in url, set default value of select based on index of program
 		},
-		[ ]
+		[]
 	);
 
     useEffect(() => {

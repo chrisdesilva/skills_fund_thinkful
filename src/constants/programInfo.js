@@ -149,6 +149,7 @@ export const programLoanInfo = [
 	{
 		name: 'Data Analytics',
 		url: 'https://my.skills.fund/application?lenderCode=SKTHDAT19',
+		queryParams: '?program=da',
 		loanInfo: {
 			// match loanInfo in first metro below
 			maxLoanAmt: 8970,
@@ -218,6 +219,7 @@ export const programLoanInfo = [
 	{
 		name: 'Data Analytics Immersion',
 		url: 'https://my.skills.fund/application?lenderCode=SKTHDATIM19', // $13,500 max tuition, no COL alert
+		queryParams: '?program=daimm',
 		loanInfo: {
 			// match loanInfo in first metro below
 			maxLoanAmt: 13600,
@@ -289,6 +291,7 @@ export const programLoanInfo = [
 	{
 		name: 'Data Analytics Nights & Weekends',
 		url: 'https://my.skills.fund/application?lenderCode=SKTHDANW19',
+		queryParams: '?program=danw',
 		loanInfo: {
 			// match loanInfo in first metro below
 			maxLoanAmt: 12600,
@@ -360,6 +363,7 @@ export const programLoanInfo = [
 	{
 		name: 'Data Science Flex',
 		url: 'https://my.skills.fund/application?lenderCode=SFTDDS',
+		queryParams: '?program=ds',
 		loanInfo: {
 			// match loanInfo in first metro below
 			maxLoanAmt: 8970,
@@ -431,6 +435,7 @@ export const programLoanInfo = [
 	{
 		name: 'Data Science Immersion',
 		url: 'https://my.skills.fund/application?lenderCode=SKTHKIMM19',
+		queryParams: '?program=dsimm',
 		loanInfo: {
 			// match loanInfo in first metro below
 			maxLoanAmt: 20000,
@@ -502,6 +507,7 @@ export const programLoanInfo = [
 	{
 		name: 'Data Science Nights & Weekends',
 		url: 'https://my.skills.fund/application?lenderCode=SKTHDSNW19',
+		queryParams: '?program=dsnw',
 		loanInfo: {
 			// match loanInfo in first metro below
 			maxLoanAmt: 12600,
@@ -573,6 +579,7 @@ export const programLoanInfo = [
 	{
 		name: 'Digital Marketing Flex',
 		url: 'https://my.skills.fund/application?lenderCode=SKTHDMFPT19',
+		queryParams: '?program=dm',
 		loanInfo: {
 			// match loanInfo in first metro below
 			maxLoanAmt: 5500,
@@ -644,6 +651,7 @@ export const programLoanInfo = [
 	{
 		name: 'Engineering Flex',
 		url: 'https://my.skills.fund/application?lenderCode=SFTF',
+		queryParams: '?program=eng',
 		loanInfo: {
 			// match loanInfo in first metro below
 			maxLoanAmt: 13100,
@@ -715,6 +723,7 @@ export const programLoanInfo = [
 	{
 		name: 'Engineering Immersion',
 		url: 'https://my.skills.fund/application?lenderCode=SFTFIO',
+		queryParams: '?program=engimm',
 		loanInfo: {
 			// match loanInfo in first metro below
 			maxLoanAmt: 17600,
@@ -782,6 +791,7 @@ export const programLoanInfo = [
 	{
 		name: 'Engineering Nights & Weekends',
 		url: 'https://my.skills.fund/application?lenderCode=SKTHKENW18',
+		queryParams: '?program=engnw',
 		loanInfo: {
 			// match loanInfo in first metro below
 			maxLoanAmt: 13825,
@@ -853,6 +863,7 @@ export const programLoanInfo = [
 	{
 		name: 'Product Management Flex',
 		url: 'https://my.skills.fund/application?lenderCode=SKTHPMF19',
+		queryParams: '?program=pm',
 		loanInfo: {
 			// match loanInfo in first metro below
 			maxLoanAmt: 9600,
@@ -924,6 +935,7 @@ export const programLoanInfo = [
 	{
 		name: 'UX/UI Design Flex',
 		url: 'https://my.skills.fund/application?lenderCode=SKTHFPD19',
+		queryParams: '?program=uxui',
 		loanInfo: {
 			// match loanInfo in first metro below
 			maxLoanAmt: 9540,
@@ -995,6 +1007,7 @@ export const programLoanInfo = [
 	{
 		name: 'UX/UI Design Immersion',
 		url: 'https://my.skills.fund/application?lenderCode=SKTHUXD19',
+		queryParams: '?program=uxuiimm',
 		loanInfo: {
 			// match loanInfo in first metro below
 			maxLoanAmt: 16000,

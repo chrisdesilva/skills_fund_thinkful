@@ -3,15 +3,7 @@ import ReactGA from 'react-ga';
 import ReactPixel from 'react-facebook-pixel';
 import marching from '../images/PeopleMarchColor.png';
 import { UnmountClosed as Collapse } from 'react-collapse';
-import {
-	faq,
-	hubspotFormId,
-	moreThanSixPrograms,
-	programLoanInfo,
-	schoolName,
-	selectAProgram,
-	skfURL
-} from '../constants/programInfo';
+import { faq, hubspotFormId, programLoanInfo, schoolName, selectAProgram, skfURL } from '../constants/programInfo';
 
 const LoanApp = React.forwardRef((props, ref) => {
 	const [ email, setEmail ] = useState('');
@@ -20,14 +12,9 @@ const LoanApp = React.forwardRef((props, ref) => {
 	const [ loanUrl, setLoanUrl ] = useState(programLoanInfo[0].url);
 	const [ programName, setProgramName ] = useState(programLoanInfo[0].name);
 	const [ activeIndex, setActiveIndex ] = useState(0); // takes in index of program to execute setActive hook
-	const [ active, setActive ] = useState(null); // sets individual programs as active or inactive to change highlight color
-	const activeClass =
-		'menu-item cursor-pointer border-2 rounded border-black text-center py-2 mb-2 bg-primary text-white';
-	const inactiveClass = 'menu-item cursor-pointer border-2 rounded border-black text-center py-2 mb-2';
+	const queryParams = programLoanInfo.map((program) => program.queryParams);
 	const formName = `${props.schoolName}_apply_now program-apply flex flex-col items-center`;
 	const costOfLiving = faq.costOfLiving;
-	const multiplePrograms = faq.multiPrograms;
-	const [ queryParams, setQueryParams ] = useState(false);
 
 	const handleChange = (e) => {
 		setEmail(e.target.value);
@@ -38,67 +25,13 @@ const LoanApp = React.forwardRef((props, ref) => {
 	};
 
 	useEffect(() => {
-		switch (props.location) {
-			case '?program=da':
-				setQueryParams(true);
-				setActiveIndex(0);
-				break;
-			case '?program=daimm':
-				setQueryParams(true);
-				setActiveIndex(1);
-				break;
-			case '?program=danw':
-				setQueryParams(true);
-				setActiveIndex(2);
-				break;
-			case '?program=ds':
-				setQueryParams(true);
-				setActiveIndex(3);
-				break;
-			case '?program=dsimm':
-				setQueryParams(true);
-				setActiveIndex(4);
-				break;
-			case '?program=dsnw':
-				setQueryParams(true);
-				setActiveIndex(5);
-				break;
-			case '?program=dm':
-				setQueryParams(true);
-				setActiveIndex(6);
-				break;
-			case '?program=eng':
-				setQueryParams(true);
-				setActiveIndex(7);
-				break;
-			case '?program=engimm':
-				setQueryParams(true);
-				setActiveIndex(8);
-				break;
-			case '?program=engnw':
-				setQueryParams(true);
-				setActiveIndex(9);
-				break;
-			case '?program=pm':
-				setQueryParams(true);
-				setActiveIndex(10);
-				break;
-			case '?program=uxui':
-				setQueryParams(true);
-				setActiveIndex(11);
-				break;
-			case '?program=uxuiimm':
-				setQueryParams(true);
-				setActiveIndex(12);
-				break;
-			default:
-				setQueryParams(false);
-		}
+		setActiveIndex(queryParams.indexOf(props.location)); // read query params in url, set default value of select based on index of program
 		setLoanUrl(programLoanInfo[activeIndex]['url']);
 		setProgramName(programLoanInfo[activeIndex]['name']);
 	}, []);
 
 	useEffect(
+		// this effect allows url to update after intial load if student selects a different program
 		() => {
 			setLoanUrl(programLoanInfo[activeIndex]['url']);
 		},
