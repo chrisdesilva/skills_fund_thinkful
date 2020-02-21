@@ -125,7 +125,7 @@ const SlidingLoanCalculator = (props) => {
 				setNonPaymentPeriod(programLoanInfo[programIndex]['loanInfo']['Interest Only']['k']);
 			}
 		},
-		[ loanType ]
+		[ loanType, programIndex ]
 	);
 
 	return (
@@ -202,6 +202,7 @@ const SlidingLoanCalculator = (props) => {
 						onChange={handleSliderAmt}
 						onTouchEnd={calculateMonthlyPayment}
 						onMouseUp={calculateMonthlyPayment}
+						onKeyUp={calculateMonthlyPayment}
 						type="range"
 						min="2000"
 						step="5"

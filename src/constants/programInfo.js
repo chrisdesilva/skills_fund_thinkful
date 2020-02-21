@@ -374,8 +374,8 @@ export const programLoanInfo = [
 			loanTerm60: false,
 			'Interest Only': {
 				// interest-only
-				k: 8,
-				apr36: 11.08,
+				k: 10,
+				apr36: 11.16,
 				apr60: 12.51
 			},
 			'Immediate Repayment': {
@@ -397,8 +397,8 @@ export const programLoanInfo = [
 					loanTerm36: true,
 					loanTerm60: false,
 					'Interest Only': {
-						k: 8,
-						apr36: 11.08,
+						k: 10,
+						apr36: 11.16,
 						apr60: 12.51
 					},
 					'Immediate Repayment': {
@@ -666,8 +666,8 @@ export const programLoanInfo = [
 			loanTerm60: false,
 			'Interest Only': {
 				// interest-only
-				k: 8,
-				apr36: 10.94,
+				k: 10,
+				apr36: 11.16,
 				apr60: 12.51
 			},
 			'Immediate Repayment': {
@@ -689,8 +689,8 @@ export const programLoanInfo = [
 					loanTerm36: true,
 					loanTerm60: false,
 					'Interest Only': {
-						k: 8,
-						apr36: 10.94,
+						k: 10,
+						apr36: 11.16,
 						apr60: 12.51
 					},
 					'Immediate Repayment': {
