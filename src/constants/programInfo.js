@@ -603,7 +603,7 @@ export const programLoanInfo = [
 		},
 		defaultLoanType: 'Interest Only', // leave at 0 for interest-only, set to 1 for immediate repayment
 		showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
-		showLoanTypes: false, // true if both IR and IO are available
+		showLoanTypes: true, // true if both IR and IO are available
 		loanTypes: [ 'Interest Only', 'Immediate Repayment' ],
 		locations: [ 'Metro 1', 'Metro 2', 'Metro 3' ],
 		metros: [
