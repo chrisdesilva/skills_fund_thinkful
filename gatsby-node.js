@@ -3,13 +3,13 @@ exports.createPages = ({ graphql, actions }) => {
 
   createRedirect({
     fromPath: "https://thinkful-da.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/:splat",
+    toPath: "https://thinkful.skills.fund/?program=da",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-dai.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/:splat",
+    toPath: "https://thinkful.skills.fund/?program=daimm",
     isPermanent: true,
     force: true,
   })
@@ -21,61 +21,61 @@ exports.createPages = ({ graphql, actions }) => {
   })
   createRedirect({
     fromPath: "https://thinkful-ds.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/:splat",
+    toPath: "https://thinkful.skills.fund/?program=ds",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-dsi.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/:splat",
+    toPath: "https://thinkful.skills.fund/?program=dsimm",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-dsnw.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/:splat",
+    toPath: "https://thinkful.skills.fund/?program=dsnw",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-dmf.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/:splat",
+    toPath: "https://thinkful.skills.fund/?program=dm",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-ei.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/:splat",
+    toPath: "https://thinkful.skills.fund/?program=engimm",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-fs.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/:splat",
+    toPath: "https://thinkful.skills.fund/?program=eng",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-nw.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/:splat",
+    toPath: "https://thinkful.skills.fund/?program=engnw",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-pm.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/:splat",
+    toPath: "https://thinkful.skills.fund/?program=pm",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-pdf.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/:splat",
+    toPath: "https://thinkful.skills.fund/?program=uxui",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-uxui.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/:splat",
+    toPath: "https://thinkful.skills.fund/?program=uxuiimm",
     isPermanent: true,
     force: true,
   })
