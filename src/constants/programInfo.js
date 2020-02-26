@@ -177,9 +177,9 @@ export const netlifyFormName = "thinkful_contact"
 
 export const GATracking = "UA-68312423-1"
 
-export const hubspotFormId = "HUBSPOT_FORM_ID" // create Hubspot form, get form id after publishing
+export const hubspotFormId = "1c127ac4-ca09-48d7-b8a6-73dcb0ad30ee" // create Hubspot form, get form id after publishing
 
-export const selectAProgram = "select_a_thinkful_program" // update school name to match form field on Hubspot, *** change to "program_name" if only one program ***"
+export const selectAProgram = "select_thinkful_program" // update school name to match form field on Hubspot, *** change to "program_name" if only one program ***"
 
 // ***** END GENERAL SCHOOL INFO *****
 

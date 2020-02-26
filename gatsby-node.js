@@ -26,6 +26,12 @@ exports.createPages = ({ graphql, actions }) => {
     force: true,
   })
   createRedirect({
+    fromPath: "https://thinkful-datascience.skills.fund/*",
+    toPath: "https://thinkful.skills.fund/?program=ds",
+    isPermanent: true,
+    force: true,
+  })
+  createRedirect({
     fromPath: "https://thinkful-dsi.skills.fund/*",
     toPath: "https://thinkful.skills.fund/?program=dsimm",
     isPermanent: true,
@@ -50,7 +56,19 @@ exports.createPages = ({ graphql, actions }) => {
     force: true,
   })
   createRedirect({
+    fromPath: "https://thinkful-ft.skills.fund/*",
+    toPath: "https://thinkful.skills.fund/?program=engimm",
+    isPermanent: true,
+    force: true,
+  })
+  createRedirect({
     fromPath: "https://thinkful-fs.skills.fund/*",
+    toPath: "https://thinkful.skills.fund/?program=eng",
+    isPermanent: true,
+    force: true,
+  })
+  createRedirect({
+    fromPath: "https://thinkful-fspt.skills.fund/*",
     toPath: "https://thinkful.skills.fund/?program=eng",
     isPermanent: true,
     force: true,
