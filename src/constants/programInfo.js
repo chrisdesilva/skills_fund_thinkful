@@ -154,7 +154,7 @@ export const schoolURL = "https://www.thinkful.com/" // update with url of schoo
 
 export const skfURL = "https://thinkful.skills.fund" // update with Skills Fund url
 
-export const headline = "Learn to Code at Thinkful" // update headline as appropriate
+export const headline = "Fund Your Future At Thinkful" // update headline as appropriate
 
 export const leadContent = {
   header: "Your last step on the path toward changing your career",
