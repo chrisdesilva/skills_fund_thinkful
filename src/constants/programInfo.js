@@ -98,13 +98,13 @@ export const faq = {
       colAmount: "$6,000",
     },
     {
-      programName: "Digital Marketing Flex",
+      programName: "Digital Marketing Immersion",
       maxAmount: "$8,300",
       col: false,
       colAmount: "$6,000",
     },
     {
-      programName: "Digital Marketing Flex - Part-Time",
+      programName: "Digital Marketing Flex",
       maxAmount: "$5,500",
       col: false,
       colAmount: "$6,000",
@@ -639,17 +639,17 @@ export const programLoanInfo = [
   // },
   {
     name: "Digital Marketing Flex",
-    url: "https://my.skills.fund/application?lenderCode=SKTHDMFFT19",
-    queryParams: "?program=dmf",
+    url: "https://my.skills.fund/application?lenderCode=SKTHDMFPT19",
+    queryParams: "?program=dm",
     loanInfo: {
       // match loanInfo in first metro below
-      maxLoanAmt: 8300,
+      maxLoanAmt: 5500,
       loanTerm36: true,
       loanTerm60: false,
       "Interest Only": {
         // interest-only
-        k: 3,
-        apr36: 11.34,
+        k: 5,
+        apr36: 11.16,
         apr60: 12.51,
       },
       "Immediate Repayment": {
@@ -667,12 +667,12 @@ export const programLoanInfo = [
         location: "Metro 1",
         loanInfo: {
           // // match loanInfo to Program 1 above
-          maxLoanAmt: 8300,
+          maxLoanAmt: 5500,
           loanTerm36: true,
           loanTerm60: false,
           "Interest Only": {
-            k: 3,
-            apr36: 11.34,
+            k: 5,
+            apr36: 11.16,
             apr60: 12.51,
           },
           "Immediate Repayment": {
@@ -711,18 +711,18 @@ export const programLoanInfo = [
     ],
   },
   {
-    name: "Digital Marketing Flex - Part-Time",
-    url: "https://my.skills.fund/application?lenderCode=SKTHDMFPT19",
-    queryParams: "?program=dm",
+    name: "Digital Marketing Immersion",
+    url: "https://my.skills.fund/application?lenderCode=SKTHDMFFT19",
+    queryParams: "?program=dmimm",
     loanInfo: {
       // match loanInfo in first metro below
-      maxLoanAmt: 5500,
+      maxLoanAmt: 8300,
       loanTerm36: true,
       loanTerm60: false,
       "Interest Only": {
         // interest-only
-        k: 5,
-        apr36: 11.16,
+        k: 3,
+        apr36: 11.34,
         apr60: 12.51,
       },
       "Immediate Repayment": {
@@ -740,12 +740,12 @@ export const programLoanInfo = [
         location: "Metro 1",
         loanInfo: {
           // // match loanInfo to Program 1 above
-          maxLoanAmt: 5500,
+          maxLoanAmt: 8300,
           loanTerm36: true,
           loanTerm60: false,
           "Interest Only": {
-            k: 5,
-            apr36: 11.16,
+            k: 3,
+            apr36: 11.34,
             apr60: 12.51,
           },
           "Immediate Repayment": {
