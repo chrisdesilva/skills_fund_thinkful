@@ -1221,6 +1221,152 @@ export const programLoanInfo = [
       },
     ],
   },
+  {
+    name: "Technical Project Management Immersion",
+    url: "https://my.skills.fund/application?lenderCode=SKTHTPMI19",
+    queryParams: "?program=tpmimm",
+    loanInfo: {
+      // match loanInfo in first metro below
+      maxLoanAmt: 10000,
+      loanTerm36: true,
+      loanTerm60: false,
+      "Interest Only": {
+        // interest-only
+        k: 5,
+        apr36: 11.16,
+        apr60: 12.51,
+      },
+      "Immediate Repayment": {
+        apr36: 11.69,
+      },
+    },
+    defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
+    showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+    showLoanTypes: true, // true if both IR and IO are available
+    loanTypes: ["Interest Only", "Immediate Repayment"],
+    locations: ["Metro 1", "Metro 2", "Metro 3"],
+    metros: [
+      // list in same order as locations array above
+      {
+        location: "Metro 1",
+        loanInfo: {
+          // // match loanInfo to Program 1 above
+          maxLoanAmt: 10000,
+          loanTerm36: true,
+          loanTerm60: false,
+          "Interest Only": {
+            k: 5,
+            apr36: 11.16,
+            apr60: 12.51,
+          },
+          "Immediate Repayment": {
+            apr36: 11.69,
+          },
+        },
+      },
+      {
+        location: "Metro 2",
+        loanInfo: {
+          maxLoanAmt: 15545,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 5,
+            apr36: 11.16,
+            apr60: 12.51,
+          },
+          "Immediate Repayment": null,
+        },
+      },
+      {
+        location: "Metro 3",
+        loanInfo: {
+          maxLoanAmt: 20545,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 5,
+            apr36: 11.16,
+            apr60: 12.51,
+          },
+          "Immediate Repayment": null,
+        },
+      },
+    ],
+  },
+  {
+    name: "Technical Project Management Flex",
+    url: "https://my.skills.fund/application?lenderCode=SKTHTPMF19",
+    queryParams: "?program=tpm",
+    loanInfo: {
+      // match loanInfo in first metro below
+      maxLoanAmt: 7500,
+      loanTerm36: true,
+      loanTerm60: false,
+      "Interest Only": {
+        // interest-only
+        k: 6,
+        apr36: 11.08,
+        apr60: 12.51,
+      },
+      "Immediate Repayment": {
+        apr36: 11.69,
+      },
+    },
+    defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
+    showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+    showLoanTypes: true, // true if both IR and IO are available
+    loanTypes: ["Interest Only", "Immediate Repayment"],
+    locations: ["Metro 1", "Metro 2", "Metro 3"],
+    metros: [
+      // list in same order as locations array above
+      {
+        location: "Metro 1",
+        loanInfo: {
+          // // match loanInfo to Program 1 above
+          maxLoanAmt: 7500,
+          loanTerm36: true,
+          loanTerm60: false,
+          "Interest Only": {
+            k: 6,
+            apr36: 11.08,
+            apr60: 12.51,
+          },
+          "Immediate Repayment": {
+            apr36: 11.69,
+          },
+        },
+      },
+      {
+        location: "Metro 2",
+        loanInfo: {
+          maxLoanAmt: 15545,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 5,
+            apr36: 11.16,
+            apr60: 12.51,
+          },
+          "Immediate Repayment": null,
+        },
+      },
+      {
+        location: "Metro 3",
+        loanInfo: {
+          maxLoanAmt: 20545,
+          loanTerm36: true,
+          loanTerm60: true,
+          "Interest Only": {
+            k: 5,
+            apr36: 11.16,
+            apr60: 12.51,
+          },
+          "Immediate Repayment": null,
+        },
+      },
+    ],
+  },
 ]
 
 // ***** BEGIN LOAN CALC TEXT INFO *****
