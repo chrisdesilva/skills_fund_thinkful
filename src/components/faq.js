@@ -209,9 +209,9 @@ const FAQ = () => {
           Aspire and Launch are the loan servicers for Skills Fund’s loans. This
           means Aspire or Launch will collect your monthly payments during the
           repayment phase of your loan. All loans applied for{" "}
-          <strong>before December 26th, 2019</strong> will be serviced by
+          <strong>before June or before 9th, 2019</strong> will be serviced by
           Aspire. All loans applied for{" "}
-          <strong>on or after December 26th, 2019</strong> will be serviced by
+          <strong>on or after June 10th, 2019</strong> will be serviced by
           Launch.{" "}
         </p>
         <p>
@@ -220,7 +220,7 @@ const FAQ = () => {
         </p>
         <ul className="mb-0 pb-4">
           <li className="list-disc">
-            If you applied for your loan before December 26th, 2019, visit{" "}
+            If you applied for your loan on or before June 9th, 2019, visit{" "}
             <a
               className="font-bold text-primary"
               href="https://www.aspireservicingcenter.com/"
@@ -232,7 +232,7 @@ const FAQ = () => {
             or at 1-800-243-7552.{" "}
           </li>
           <li className="list-disc">
-            If you applied for your loan on or after December 26th, 2019, visit{" "}
+            If you applied for your loan on or after June 10th, 2019, visit{" "}
             <a
               className="font-bold text-primary"
               href="https://prod.launchservicing.com/Borrower/Login.aspx"

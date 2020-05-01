@@ -131,6 +131,10 @@ const SlidingLoanCalculator = props => {
   }, [])
 
   useEffect(() => {
+    setLoanType(programLoanInfo[programIndex]["loanTypes"][0])
+  }, [programIndex])
+
+  useEffect(() => {
     calculateMonthlyPayment() // run calculator when page loads to show initial amounts
     // setLoanType(programLoanInfo[programIndex][loanTypes]);
     hasMultiMetros(programLoanInfo[programIndex]["showMetros"])
