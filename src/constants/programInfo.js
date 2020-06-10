@@ -80,10 +80,10 @@ export const previewText = {
   // subheadline:
   //   "We offer a straightforward loan so you can focus on your program and transform your future.",
   cards: [
-    {
-      heading: "Deferred Repayment",
-      body: "Make no payments while you study and for three months after.",
-    },
+    // {
+    //   heading: "Deferred Repayment",
+    //   body: "Make no payments while you study and for three months after.",
+    // },
     {
       heading: "Interest Only",
       body:
@@ -134,7 +134,7 @@ export const faq = {
   // max loan amounts by program for faq1
   loanRange: [
     {
-      programName: "Data Analytics",
+      programName: "Data Analytics Flex",
       maxAmount: "$8,970",
       col: false,
       colAmount: "$6,000",
@@ -262,7 +262,7 @@ export const moreThanSixPrograms = true // set to true if there are 7 or more pr
 export const programLoanInfo = [
   // update with program names and corresponding loan URLs with market segment code from Master Loan Parameters
   {
-    name: "Data Analytics",
+    name: "Data Analytics Flex",
     url: "https://my.skills.fund/application?lenderCode=SKTHDAT19",
     queryParams: "?program=da",
     loanInfo: {
