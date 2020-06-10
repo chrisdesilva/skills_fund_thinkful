@@ -135,7 +135,7 @@ export const faq = {
   loanRange: [
     {
       programName: "Data Analytics Flex",
-      maxAmount: "$8,970",
+      maxAmount: "$4,950",
       col: false,
       colAmount: "$6,000",
     },
@@ -147,7 +147,7 @@ export const faq = {
     },
     {
       programName: "Data Science Flex",
-      maxAmount: "$8,970",
+      maxAmount: "$7,800",
       col: false,
       colAmount: "$6,000",
     },
@@ -165,13 +165,13 @@ export const faq = {
     },
     {
       programName: "Digital Marketing Flex",
-      maxAmount: "$5,500",
+      maxAmount: "$4,950",
       col: false,
       colAmount: "$6,000",
     },
     {
       programName: "Engineering Flex",
-      maxAmount: "$10,000",
+      maxAmount: "$7,800",
       col: false,
       colAmount: "$6,000",
     },
@@ -189,13 +189,25 @@ export const faq = {
     },
     {
       programName: "Product Management Flex",
-      maxAmount: "$9,600",
+      maxAmount: "$4,950",
+      col: false,
+      colAmount: "$6,000",
+    },
+    {
+      programName: "Technical Project Managament Immersion",
+      maxAmount: "$10,000",
+      col: false,
+      colAmount: "$6,000",
+    },
+    {
+      programName: "Technical Project Managament Flex",
+      maxAmount: "$4,950",
       col: false,
       colAmount: "$6,000",
     },
     {
       programName: "UX/UI Design Flex",
-      maxAmount: "$9,540",
+      maxAmount: "$7,800",
       col: false,
       colAmount: "$6,000",
     },
@@ -267,7 +279,7 @@ export const programLoanInfo = [
     queryParams: "?program=da",
     loanInfo: {
       // match loanInfo in first metro below
-      maxLoanAmt: 8970,
+      maxLoanAmt: 4950,
       loanTerm36: true,
       loanTerm60: false,
       "Interest Only": {
@@ -290,7 +302,7 @@ export const programLoanInfo = [
         location: "Metro 1",
         loanInfo: {
           // // match loanInfo to Program 1 above
-          maxLoanAmt: 8970,
+          maxLoanAmt: 4950,
           loanTerm36: true,
           loanTerm60: false,
           "Interest Only": {
@@ -484,7 +496,7 @@ export const programLoanInfo = [
     queryParams: "?program=ds",
     loanInfo: {
       // match loanInfo in first metro below
-      maxLoanAmt: 8970,
+      maxLoanAmt: 7800,
       loanTerm36: true,
       loanTerm60: false,
       "Interest Only": {
@@ -508,7 +520,7 @@ export const programLoanInfo = [
         location: "Metro 1",
         loanInfo: {
           // // match loanInfo to Program 1 above
-          maxLoanAmt: 8970,
+          maxLoanAmt: 7800,
           loanTerm36: true,
           loanTerm60: false,
           "Interest Only": {
@@ -703,7 +715,7 @@ export const programLoanInfo = [
     queryParams: "?program=dm",
     loanInfo: {
       // match loanInfo in first metro below
-      maxLoanAmt: 5500,
+      maxLoanAmt: 4950,
       loanTerm36: true,
       loanTerm60: false,
       "Interest Only": {
@@ -727,7 +739,7 @@ export const programLoanInfo = [
         location: "Metro 1",
         loanInfo: {
           // // match loanInfo to Program 1 above
-          maxLoanAmt: 5500,
+          maxLoanAmt: 4950,
           loanTerm36: true,
           loanTerm60: false,
           "Interest Only": {
@@ -849,7 +861,7 @@ export const programLoanInfo = [
     queryParams: "?program=eng",
     loanInfo: {
       // match loanInfo in first metro below
-      maxLoanAmt: 10000,
+      maxLoanAmt: 7800,
       loanTerm36: true,
       loanTerm60: false,
       "Interest Only": {
@@ -873,7 +885,7 @@ export const programLoanInfo = [
         location: "Metro 1",
         loanInfo: {
           // // match loanInfo to Program 1 above
-          maxLoanAmt: 10000,
+          maxLoanAmt: 7800,
           loanTerm36: true,
           loanTerm60: false,
           "Interest Only": {
@@ -1064,11 +1076,11 @@ export const programLoanInfo = [
   },
   {
     name: "Product Management Flex",
-    url: "https://my.skills.fund/application?lenderCode=SKTHPMF19",
+    url: "https://my.skills.fund/application?lenderCode=SKTHTPMF19",
     queryParams: "?program=pm",
     loanInfo: {
       // match loanInfo in first metro below
-      maxLoanAmt: 9600,
+      maxLoanAmt: 4950,
       loanTerm36: true,
       loanTerm60: false,
       "Interest Only": {
@@ -1092,7 +1104,7 @@ export const programLoanInfo = [
         location: "Metro 1",
         loanInfo: {
           // // match loanInfo to Program 1 above
-          maxLoanAmt: 9600,
+          maxLoanAmt: 4950,
           loanTerm36: true,
           loanTerm60: false,
           "Interest Only": {
@@ -1105,32 +1117,94 @@ export const programLoanInfo = [
           },
         },
       },
+    ],
+  },
+  {
+    name: "Technical Project Management Immersion",
+    url: "https://my.skills.fund/application?lenderCode=SKTHTPMI19",
+    queryParams: "?program=tpmimm",
+    loanInfo: {
+      // match loanInfo in first metro below
+      maxLoanAmt: 4950,
+      loanTerm36: true,
+      loanTerm60: false,
+      "Interest Only": {
+        // interest-only
+        k: 8,
+        apr36: 11.42,
+        apr60: 12.51,
+      },
+      "Immediate Repayment": {
+        apr36: 12.36,
+      },
+    },
+    defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
+    showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+    showLoanTypes: true, // true if both IR and IO are available
+    loanTypes: ["Interest Only", "Immediate Repayment"],
+    locations: ["Metro 1", "Metro 2", "Metro 3"],
+    metros: [
+      // list in same order as locations array above
       {
-        location: "Metro 2",
+        location: "Metro 1",
         loanInfo: {
-          maxLoanAmt: 15545,
+          // // match loanInfo to Program 1 above
+          maxLoanAmt: 4950,
           loanTerm36: true,
-          loanTerm60: true,
+          loanTerm60: false,
           "Interest Only": {
-            k: 5,
-            apr36: 11.16,
+            k: 8,
+            apr36: 11.42,
             apr60: 12.51,
           },
-          "Immediate Repayment": null,
+          "Immediate Repayment": {
+            apr36: 12.36,
+          },
         },
       },
+    ],
+  },
+  {
+    name: "Technical Project Management Flex",
+    url: "https://my.skills.fund/application?lenderCode=SKTHPMF19",
+    queryParams: "?program=tpm",
+    loanInfo: {
+      // match loanInfo in first metro below
+      maxLoanAmt: 4950,
+      loanTerm36: true,
+      loanTerm60: false,
+      "Interest Only": {
+        // interest-only
+        k: 8,
+        apr36: 11.42,
+        apr60: 12.51,
+      },
+      "Immediate Repayment": {
+        apr36: 12.36,
+      },
+    },
+    defaultLoanType: "Interest Only", // leave at 0 for interest-only, set to 1 for immediate repayment
+    showMetros: false, // true if there are multiple metros with different tuition amounts for the same program
+    showLoanTypes: true, // true if both IR and IO are available
+    loanTypes: ["Interest Only", "Immediate Repayment"],
+    locations: ["Metro 1", "Metro 2", "Metro 3"],
+    metros: [
+      // list in same order as locations array above
       {
-        location: "Metro 3",
+        location: "Metro 1",
         loanInfo: {
-          maxLoanAmt: 20545,
+          // // match loanInfo to Program 1 above
+          maxLoanAmt: 4950,
           loanTerm36: true,
-          loanTerm60: true,
+          loanTerm60: false,
           "Interest Only": {
-            k: 5,
-            apr36: 11.16,
+            k: 8,
+            apr36: 11.42,
             apr60: 12.51,
           },
-          "Immediate Repayment": null,
+          "Immediate Repayment": {
+            apr36: 12.36,
+          },
         },
       },
     ],
@@ -1141,7 +1215,7 @@ export const programLoanInfo = [
     queryParams: "?program=uxui",
     loanInfo: {
       // match loanInfo in first metro below
-      maxLoanAmt: 9540,
+      maxLoanAmt: 7800,
       loanTerm36: true,
       loanTerm60: false,
       "Interest Only": {
@@ -1165,7 +1239,7 @@ export const programLoanInfo = [
         location: "Metro 1",
         loanInfo: {
           // // match loanInfo to Program 1 above
-          maxLoanAmt: 9540,
+          maxLoanAmt: 7800,
           loanTerm36: true,
           loanTerm60: false,
           "Interest Only": {
