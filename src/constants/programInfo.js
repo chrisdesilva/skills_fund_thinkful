@@ -93,6 +93,10 @@ export const previewText = {
       heading: "Immediate Repayment",
       body: "Start paying your loan back one month after your program begins.",
     },
+    {
+      heading: "Extended Deferment",
+      body: "Make no payments while studying and for up to 6 months after.",
+    },
     // {
     //   heading: "36-Month Loan",
     //   // body:

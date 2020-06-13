@@ -155,7 +155,7 @@ const LoanApp = React.forwardRef((props, ref) => {
         </div>
         {/* update form fields as necessary */}
         <form className={formName} onSubmit={handleSubmit}>
-          <div className="w-full lg:w-64 px-8 lg:px-0">
+          <div className="w-full lg:w-64 px-0 flex flex-col items-center">
             <label htmlFor="email">Email address</label>
             <input
               className="border-2 rounded border-black text-center py-2 mb-4 w-64"
