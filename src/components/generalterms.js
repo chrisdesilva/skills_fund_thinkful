@@ -322,18 +322,18 @@ const GeneralTerms = props => (
                 <>
                   <p>
                     <strong>Interest-Only Loans:</strong> Full repayments
-                    (principal and interest) are required.
+                    (principal and interest) are required
                   </p>
                   <p>
                     <strong>Extended Deferment:</strong> Full repayments
-                    (principal and interest) are required.
+                    (principal and interest) are required
                   </p>
                 </>
               )}
               {props.immediateRepayment && (
                 <p>
                   <strong>Immediate Repayment Loans:</strong> Full repayments
-                  (principal and interest) are required.
+                  (principal and interest) are required
                 </p>
               )}
             </td>
