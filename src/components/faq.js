@@ -159,8 +159,11 @@ const FAQ = () => {
       <Collapse isOpened={q4} springConfig={{ stiffness: 150, damping: 30 }}>
         <p>
           You have several options, including automated payments! After you
-          apply for a loan, we’ll help you set up your repayment account. You’ll
-          make your first payment one month after your program starts.
+          apply for a loan, we’ll help you set up your repayment account.
+          Depending on which repayment plan you choose, you’ll begin making
+          payments either one month after your program starts (interest-only and
+          immediate repayment loans) or after the variable grace period ends
+          (extended deferment loans, more details below).
         </p>
         <p>
           You’ll make monthly payments until your loan is fully repaid, and
@@ -171,7 +174,7 @@ const FAQ = () => {
         </p>
         {faq.multipleLoanTypes && (
           <>
-            <p>Skills Fund offers two repayment options.</p>
+            <p>Skills Fund offers multiple repayment options.</p>
             <ul>
               <li className="list-disc">
                 <strong>Interest-only</strong> loans allow you to hold on to
@@ -186,11 +189,14 @@ const FAQ = () => {
                 get started on repayment. You’ll start making full payments
                 about one month after your program starts.
               </li>
-              {/* <li className="list-disc">
-                <strong>Deferred Repayment</strong> allows you to make no
-                payments while you’re in school and for three months after. Then
-                you’ll start making full payments (interest + principal).
-              </li> */}
+              <li className="list-disc">
+                <strong>Extended deferment</strong> loans allow you to make no
+                payments while in your program and for up to six months after.
+                You will begin making full payments (interest + principal) when
+                your school notifies us that you have received an Offer of
+                Employment or six months after completing your program
+                (whichever comes first).
+              </li>
             </ul>
           </>
         )}

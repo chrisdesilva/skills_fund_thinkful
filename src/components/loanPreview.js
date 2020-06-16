@@ -21,16 +21,22 @@ const LoanPreview = props => {
           {previewText.cards.map(card => (
             <div className="relative flex flex-col items-center justify-between p-4 border-2 border-gray-700 rounded shadow-2xl w-full m-2 lg:w-64 text-center">
               <h3>{card.heading}</h3>
-              <p>{card.body}</p>
+              <p>
+                {card.body}
+                {card.heading === "Extended Deferment" && (
+                  <>
+                    <br />
+                    <span className="text-xs leading-tight bottom-0">
+                      Only available for Thinkful Flex programs.
+                    </span>
+                  </>
+                )}
+              </p>
               {card.heading === "Deferred Repayment" ||
                 (card.heading === "Extended Deferment" && (
                   <span className="ribbon text-sm">NEW</span>
                 ))}
-              {card.heading === "Extended Deferment" && (
-                <span className="text-xs leading-tight absolute bottom-0">
-                  *Only available for Thinkful Part-Time programs at this time.
-                </span>
-              )}
+
               <p onClick={props.onClick} className="footerLink cursor-pointer">
                 Get Started &rarr;
               </p>

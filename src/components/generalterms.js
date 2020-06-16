@@ -63,8 +63,9 @@ const GeneralTerms = props => (
                     capitalized unless payments not made.
                   </p>
                   <p className="mb-1">
-                    <strong>Deferred Loan:</strong> Interest is capitalized
-                    during deferment.
+                    <strong>Extended Deferment Loans:</strong> Interest accrues
+                    during deferment period, and the accrued interest is
+                    capitalized when you enter repayment.
                   </p>
                 </>
               )}
@@ -87,9 +88,9 @@ const GeneralTerms = props => (
                     loan is disbursed.
                   </p>
                   <p className="mb-1">
-                    <strong>Deferred Loan:</strong> No payments required until
-                    you receive a qualified job offer or 6 months after
-                    completing your program (whichever comes first).
+                    <strong>Extended Deferment Loans:</strong> No payments
+                    required until you receive a qualified job offer or 6 months
+                    after completing your program (whichever comes first).
                   </p>
                 </>
               )}
@@ -118,8 +119,8 @@ const GeneralTerms = props => (
                     period after completing your program.
                   </p>
                   <p className="mb-1">
-                    <strong>Extended Deferment:</strong> Up to six month grace
-                    period after completing your program where you are not
+                    <strong>Extended Deferment Loans:</strong> Up to six month
+                    grace period after completing your program where you are not
                     required to make any payments. You will begin making full
                     payments (interest + principal) when your school notifies us
                     that you have received an Offer of Employment or six months
@@ -145,7 +146,7 @@ const GeneralTerms = props => (
                     (principal and interest) are required.
                   </p>
                   <p className="mb-1">
-                    <strong>Extended Deferment:</strong> Full repayments
+                    <strong>Extended Deferment Loans:</strong> Full repayments
                     (principal and interest) are required.
                   </p>
                 </>
@@ -233,8 +234,9 @@ const GeneralTerms = props => (
                     capitalized unless payments not made.
                   </p>
                   <p>
-                    <strong>Deferred Loan:</strong> Interest is capitalized
-                    during deferment.
+                    <strong>Extended Deferment Loans: </strong> Interest accrues
+                    during deferment period, and the accrued interest is
+                    capitalized when you enter repayment.
                   </p>
                 </>
               )}
@@ -261,7 +263,7 @@ const GeneralTerms = props => (
                     loan is disbursed.
                   </p>
                   <p>
-                    <strong>Deferred Repayment Loan:</strong> No payments
+                    <strong>Extended Deferment Loans:</strong> No payments
                     required until you receive a qualified job offer or 6 months
                     after completing your program (whichever comes first).
                   </p>
@@ -294,8 +296,8 @@ const GeneralTerms = props => (
                     period after completing your program.
                   </p>
                   <p>
-                    <strong>Extended Deferment:</strong> Up to six month grace
-                    period after completing your program where you are not
+                    <strong>Extended Deferment Loans:</strong> Up to six month
+                    grace period after completing your program where you are not
                     required to make any payments. You will begin making full
                     payments (interest + principal) when your school notifies us
                     that you have received an Offer of Employment or six months
@@ -325,7 +327,7 @@ const GeneralTerms = props => (
                     (principal and interest) are required
                   </p>
                   <p>
-                    <strong>Extended Deferment:</strong> Full repayments
+                    <strong>Extended Deferment Loans:</strong> Full repayments
                     (principal and interest) are required
                   </p>
                 </>
@@ -401,10 +403,11 @@ const GeneralTerms = props => (
                         <strong>Interest-Only Loans:</strong> Interest not
                         capitalized unless payments not made.
                       </p>
-                      {/* <p>
-                        <strong>Deferred Repayment Loan:</strong> Interest
-                        capitalizes during program and grace period.
-                      </p> */}
+                      <p>
+                        <strong>Extended Deferment Loans:</strong> Interest
+                        accrues during deferment period, and the accrued
+                        interest is capitalized when you enter repayment.
+                      </p>
                     </>
                   )}
                   {props.immediateRepayment && (
@@ -428,10 +431,12 @@ const GeneralTerms = props => (
                         <strong>Interest-Only Loans:</strong> Monthly interest
                         payments are required.
                       </p>
-                      {/* <p>
-                        <strong>Deferred Repayment Loan:</strong> No monthly
-                        payments are required.
-                      </p> */}
+                      <p>
+                        <strong>Extended Deferment Loans:</strong> No payments
+                        required until you receive a qualified job offer or 6
+                        months after completing your program (whichever comes
+                        first).
+                      </p>
                     </>
                   )}
                   {props.immediateRepayment && (
@@ -451,21 +456,26 @@ const GeneralTerms = props => (
               <tr>
                 <td className="text-center">
                   <p>
-                    Three-month period after the in-school period, following
-                    official program completion, and before interest and
-                    principal repayment begins.
+                    Interest Only and Extended Deferment loan options offer a
+                    grace period after program completion in which the student
+                    can make either low or no payments for a set period of time.
                   </p>
                   {props.interestOnly && (
                     <>
                       <p>
                         <strong>Interest-Only Loans:</strong> Interest-only
-                        payments are required while in school and in the grace
-                        period.
+                        payments are required while in school and in the three
+                        month grace period after completing your program.
                       </p>
-                      {/* <p>
-                        <strong>Deferred Repayment Loan:</strong> No payments
-                        are required while in school and in the grace period.
-                      </p> */}
+                      <p>
+                        <strong>Extended Deferment Loans:</strong> Up to six
+                        month grace period after completing your program where
+                        you are not required to make any payments. You will
+                        begin making full payments (interest + principal) when
+                        your school notifies us that you have received an Offer
+                        of Employment or six months after completing your
+                        program (whichever comes first).
+                      </p>
                     </>
                   )}
                   {props.immediateRepayment && (
@@ -490,10 +500,10 @@ const GeneralTerms = props => (
                         <strong>Interest-Only Loans:</strong> Full repayments
                         (principal and interest) are required.
                       </p>
-                      {/* <p>
-                        <strong>Deferred Repayment Loan:</strong> Full
+                      <p>
+                        <strong>Extended Deferment Loans:</strong> Full
                         repayments (principal and interest) are required.
-                      </p> */}
+                      </p>
                     </>
                   )}
                   {props.immediateRepayment && (
