@@ -32,8 +32,8 @@ const LoanApp = React.forwardRef((props, ref) => {
   }
 
   useEffect(() => {
-    if (queryParams.indexOf(props.location) !== -1) {
-      setActiveIndex(queryParams.indexOf(props.location)) // read query params in url, set default value of select based on index of program
+    if (queryParams.indexOf(window.location.search) !== -1) {
+      setActiveIndex(queryParams.indexOf(window.location.search)) // read query params in url, set default value of select based on index of program
       setLoanUrl(programLoanInfo[activeIndex]["url"])
       setProgramName(programLoanInfo[activeIndex]["name"])
       console.log(programLoanInfo[activeIndex])
@@ -177,7 +177,7 @@ const LoanApp = React.forwardRef((props, ref) => {
             >
               {programLoanInfo.map((program, i) => {
                 return (
-                  <option key={program.name} value={i}>
+                  <option key={i} value={i}>
                     {program.name}
                   </option>
                 )
