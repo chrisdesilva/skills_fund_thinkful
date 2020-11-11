@@ -3,110 +3,107 @@ exports.createPages = ({ graphql, actions }) => {
 
   createRedirect({
     fromPath: "https://thinkful-da.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/?program=da",
-    isPermanent: true,
-    force: true,
-  })
-  createRedirect({
-    fromPath: "/test",
     toPath: "https://ascentfunding.com/thinkful",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-dai.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/?program=daimm",
+    toPath: "https://ascentfunding.com/thinkful",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-danw.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/?program=danw",
+    toPath: "https://ascentfunding.com/thinkful",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-ds.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/?program=ds",
+    toPath: "https://ascentfunding.com/thinkful",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-datascience.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/?program=ds",
+    toPath: "https://ascentfunding.com/thinkful",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-dsi.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/?program=dsimm",
+    toPath: "https://ascentfunding.com/thinkful",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-dsnw.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/?program=dsnw",
+    toPath: "https://ascentfunding.com/thinkful",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-dmf.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/?program=dm",
+    toPath: "https://ascentfunding.com/thinkful",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-ei.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/?program=engimm",
+    toPath: "https://ascentfunding.com/thinkful",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-ft.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/?program=engimm",
+    toPath: "https://ascentfunding.com/thinkful",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-fs.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/?program=eng",
+    toPath: "https://ascentfunding.com/thinkful",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-fspt.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/?program=eng",
+    toPath: "https://ascentfunding.com/thinkful",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-nw.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/?program=engnw",
+    toPath: "https://ascentfunding.com/thinkful",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-pm.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/?program=pm",
+    toPath: "https://ascentfunding.com/thinkful",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-pdf.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/?program=uxui",
+    toPath: "https://ascentfunding.com/thinkful",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "https://thinkful-uxui.skills.fund/*",
-    toPath: "https://thinkful.skills.fund/?program=uxuiimm",
+    toPath: "https://ascentfunding.com/thinkful",
     isPermanent: true,
     force: true,
   })
   createRedirect({
     fromPath: "/go",
     toPath:
-      "/?utm_source=school&utm_medium=printedskfbrochure&utm_campaign=studentbrochure",
+      "https://ascentfunding.com/thinkful/?utm_source=school&utm_medium=printedskfbrochure&utm_campaign=studentbrochure",
   })
-  createRedirect({ fromPath: "/accepted", toPath: "/" })
+  createRedirect({
+    fromPath: "/accepted",
+    toPath: "https://ascentfunding.com/thinkful",
+  })
 }
