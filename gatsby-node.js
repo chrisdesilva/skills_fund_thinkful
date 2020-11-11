@@ -8,6 +8,12 @@ exports.createPages = ({ graphql, actions }) => {
     force: true,
   })
   createRedirect({
+    fromPath: "/test",
+    toPath: "https://ascentfunding.com/thinkful",
+    isPermanent: true,
+    force: true,
+  })
+  createRedirect({
     fromPath: "https://thinkful-dai.skills.fund/*",
     toPath: "https://thinkful.skills.fund/?program=daimm",
     isPermanent: true,
