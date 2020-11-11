@@ -104,6 +104,12 @@ exports.createPages = ({ graphql, actions }) => {
     force: true,
   })
   createRedirect({
+    fromPath: "https://thinkful.skills.fund/*",
+    toPath: "https://ascentfunding.com/thinkful",
+    isPermanent: true,
+    force: true,
+  })
+  createRedirect({
     fromPath: "/go",
     toPath:
       "/?utm_source=school&utm_medium=printedskfbrochure&utm_campaign=studentbrochure",
